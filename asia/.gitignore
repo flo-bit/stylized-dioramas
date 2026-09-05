@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.vite.log
+.vite.pid
+.preview.log
+.preview.pid
+.DS_Store

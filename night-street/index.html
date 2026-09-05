@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#121b25" />
+    <meta name="description" content="A small, rain-soaked corner of a city that never quite sleeps. An interactive, handcrafted Three.js diorama." />
+    <title>Ame Yokochō — After the rain</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121b25'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-size='43' fill='%23ecbc87'%3E雨%3C/text%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <main id="app">
+      <div id="scene" aria-label="Interactive 3D diorama of a neon-lit Japanese alley at night"></div>
+      <div class="vignette" aria-hidden="true"></div>
+      <header class="masthead">
+        <a class="identity" href="../" aria-label="All dioramas" title="Back to all dioramas"><span class="seal">雨</span><span>AME YOKOCHŌ<small>SMALL WORLDS, LATE HOURS</small></span></a>
+        <div class="time"><span class="live-dot"></span> TOKYO, 02:17 <span class="time-divider">/</span> 18°C</div>
+      </header>
+      <section class="caption" aria-label="Scene title">
+        <div class="eyebrow"><span>夜の街</span><span class="hairline"></span> A DIORAMA STUDY · 001</div>
+        <h1>After the rain<span>.</span></h1>
+        <p>A quiet corner. A light left on.</p>
+      </section>
+      <nav class="tools" aria-label="Scene controls">
+        <button id="rain" class="active" aria-pressed="true" title="Toggle rain (R)"><svg viewBox="0 0 24 24"><path d="M6 12a4 4 0 0 1 1-7.9 5 5 0 0 1 9.4.9A3.5 3.5 0 0 1 18 12H6ZM7 16l-1 3m6-3-1 3m6-3-1 3"/></svg><span>Rain</span></button>
+        <button id="lights" class="active" aria-pressed="true" title="Toggle neon lights (L)"><svg viewBox="0 0 24 24"><path d="m13 2-8 12h6l-1 8 9-13h-7l1-7Z"/></svg><span>Neon</span></button>
+        <button id="orbit" aria-pressed="false" title="Auto rotate (O)"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(-25 12 12)"/><path d="M12 8V4m0 16v-4"/><circle cx="12" cy="12" r="2"/></svg><span>Orbit</span></button>
+        <span class="tool-divider"></span>
+        <button id="reset" class="icon-only" title="Reset view (0)" aria-label="Reset view"><svg viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 1 7M4 4v6h6"/></svg></button>
+        <button id="capture" class="icon-only" title="Save a postcard (S)" aria-label="Save a postcard"><svg viewBox="0 0 24 24"><path d="M4 6h4l2-3h4l2 3h4v14H4Z"/><circle cx="12" cy="12.5" r="4"/></svg></button>
+        <button id="fullscreen" class="icon-only" title="Fullscreen (F)" aria-label="Enter fullscreen"><svg viewBox="0 0 24 24"><path d="M9 3H3v6m12-6h6v6M3 15v6h6m12-6v6h-6"/></svg></button>
+      </nav>
+      <footer><span class="instructions"><span class="mouse-icon"></span> DRAG TO EXPLORE <i>·</i> SCROLL TO ZOOM</span><span class="edition">BUILT IN THREE.JS <span>↗</span></span></footer>
+      <div id="toast" role="status"></div>
+      <div id="loading"><div class="loading-seal">雨</div><p>A little world is waking up<span>…</span></p></div>
+      <div id="error" hidden><h2>This little world needs WebGL.</h2><p>Try a recent browser with hardware acceleration enabled.</p></div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

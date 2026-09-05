@@ -1,0 +1,10 @@
+packages:
+  - asia
+  - island
+  - italy-town
+  - night-street
+  - ruins
+  - underwater
+
+onlyBuiltDependencies:
+  - esbuild

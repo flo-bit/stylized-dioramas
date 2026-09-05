@@ -1,0 +1,10 @@
+import { chromium } from '@playwright/test';
+const start=performance.now();
+const browser=await chromium.launch({headless:true,args:['--enable-webgl','--ignore-gpu-blocklist',...(process.platform==='darwin'?['--use-angle=metal']:[])]});
+const page=await browser.newPage({viewport:{width:1280,height:900}});
+await page.goto('http://127.0.0.1:4186');console.log('loaded',Math.round(performance.now()-start));
+await page.waitForFunction(()=>window.__DIORAMA_READY__,null,{timeout:120000});
+console.log('ready',Math.round(performance.now()-start));
+console.log(await page.evaluate(()=>{const d=window.__diorama,gl=d.renderer.getContext(),ext=gl.getExtension('WEBGL_debug_renderer_info');let tris=0,ins=0;d.scene.traverse(o=>{if(!o.isMesh)return;const n=o.isInstancedMesh?o.count:1;ins+=n;tris+=n*(o.geometry.index?.count||o.geometry.attributes.position.count)/3;});return{gpu:ext?gl.getParameter(ext.UNMASKED_RENDERER_WEBGL):'unknown',tris,ins};}));
+console.log('frames',await page.evaluate(()=>new Promise(resolve=>{const times=[];let previous=performance.now();function frame(now){times.push(now-previous);previous=now;if(times.length===8)resolve(times.map(Math.round));else requestAnimationFrame(frame);}requestAnimationFrame(frame);})));
+await browser.close();

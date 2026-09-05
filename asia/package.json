@@ -1,0 +1,19 @@
+{
+  "name": "komorebi-garden",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 5187 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 43187 --strictPort",
+    "test": "node tests/smoke.mjs"
+  },
+  "dependencies": {
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "vite": "^7.1.0"
+  }
+}

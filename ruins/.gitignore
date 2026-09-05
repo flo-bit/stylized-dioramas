@@ -1,0 +1,8 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+.vite.log
+.vite.pid
+artifacts/postcard.png
+.DS_Store

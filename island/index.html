@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#d9e2df" />
+    <meta name="description" content="A tiny tropical escape. An interactive, handcrafted Three.js island diorama." />
+    <title>Offshore — A little paradise</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23e9eee6'/%3E%3Cpath d='M27 53Q38 32 32 20' fill='none' stroke='%23876948' stroke-width='5'/%3E%3Cpath d='M32 21Q11 5 8 30Q20 21 32 21M32 21Q50 2 57 28Q44 20 32 21M32 21Q20 0 20 8Q34 7 32 21M32 21Q47 19 48 40Q38 28 32 21' fill='%23527642'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <main id="app">
+      <canvas id="scene" aria-label="Interactive tropical island diorama. Drag to orbit and scroll to zoom." tabindex="0"></canvas>
+      <header class="masthead">
+        <a class="wordmark" href="../" aria-label="All dioramas" title="Back to all dioramas"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="13" r="6"/><path d="M16 1v3M5.5 4.5l2.2 2.2M1 13h3M28 13h3M24.3 6.7l2.2-2.2M4 23q4-4 8 0t8 0t8 0M7 29q3-3 6 0t6 0t6 0"/></svg>offshore<span class="wordmark-dot">®</span></a>
+        <div class="edition">SMALL WORLDS. SLOW MOMENTS.<span>AN INTERACTIVE DIORAMA / 001</span></div>
+        <button class="icon-button" id="info-toggle" title="About this island" aria-label="About this island" aria-expanded="false"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v6M12 7v.5"/></svg></button>
+      </header>
+      <section class="title-block" aria-label="Scene title">
+        <div class="eyebrow"><span></span> NO PLANS. NO HURRY.</div>
+        <h1>A little<br><em>paradise.</em></h1>
+        <p>Somewhere you'd rather be.</p>
+      </section>
+      <div class="scene-tag" id="scene-tag" aria-live="polite"></div>
+      <aside id="about" class="about-panel" hidden>
+        <div class="eyebrow">A POCKET-SIZED ESCAPE</div>
+        <h2>Nothing on the agenda.</h2>
+        <p>Three palms, a quiet shore, and a boat with nowhere to be. A little world made entirely of geometry, light, and a few gently moving tides.</p>
+        <p class="about-hint">Drag to find your angle. Scroll to get a little closer. Stay as long as you like.</p>
+        <div class="about-footer">BUILT WITH THREE.JS <span>01 / ISLAND</span></div>
+      </aside>
+      <footer class="footer">
+        <div class="location"><span class="location-number">01</span><div>THE LITTLE ESCAPE<span>LOW TIDE · HIGH SPIRITS</span></div></div>
+        <nav class="controls" aria-label="Scene controls">
+          <button id="rotate-toggle" class="control" title="Toggle auto orbit (R)" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M20 10a8 8 0 1 0-1.8 7.2M20 4v6h-6"/></svg><span>Orbit</span></button>
+          <span class="divider"></span>
+          <button id="motion-toggle" class="control active" title="Pause or play the island (Space)" aria-pressed="true"><svg viewBox="0 0 24 24"><path d="M3 8q3-4 6 0t6 0t6 0M3 15q3-4 6 0t6 0t6 0"/></svg><span>Tides</span></button>
+          <span class="divider"></span>
+          <button id="light-toggle" class="control" title="Switch to golden hour (L)" aria-pressed="false"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6L19 19M5 19l1.4-1.4M17.6 6.4L19 5"/></svg><span id="light-label">Daylight</span></button>
+          <span class="divider"></span>
+          <button id="reset" class="control icon-only" title="Reset view (0)" aria-label="Reset view"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/><circle cx="12" cy="12" r="2"/></svg></button>
+          <button id="capture" class="control icon-only" title="Save a postcard (P)" aria-label="Save a postcard"><svg viewBox="0 0 24 24"><path d="M8 5l1-2h6l1 2h4v15H4V5z"/><circle cx="12" cy="12" r="4"/></svg></button>
+        </nav>
+        <div class="interaction-hint"><svg viewBox="0 0 24 24"><path d="M8 12V5a1.5 1.5 0 0 1 3 0v5-7a1.5 1.5 0 0 1 3 0v7-5a1.5 1.5 0 0 1 3 0v6-2a1.5 1.5 0 0 1 3 0v6c0 5-3 7-6 7-4 0-6-4-9-7-2-2 0-4 2-2l2 2"/></svg><span>DRAG TO EXPLORE<br><span>SCROLL TO WANDER CLOSER</span></span></div>
+      </footer>
+      <div id="toast" role="status"></div>
+      <div id="loading"><div class="loading-mark">offshore</div><span>FINDING YOUR LITTLE PARADISE</span><div class="loading-line"></div></div>
+      <div id="error" hidden><h2>A little technical low tide.</h2><p>This island needs a browser with WebGL. Please enable hardware acceleration and reload.</p></div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#e7ece7" />
+    <meta name="description" content="An interactive miniature world beneath the waves. Explore ancient ruins, colorful corals, and a little forgotten treasure." />
+    <title>Thalassa — The sunken garden</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' rx='20' fill='%232d6661'/%3E%3Cpath d='M22 47V31a18 18 0 0136 0v16M16 56q12-9 24 0t24 0M16 65q12-9 24 0t24 0' fill='none' stroke='%23e8eddf' stroke-width='4'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="scene" role="img" aria-label="Interactive underwater diorama with ancient stone ruins, kelp, coral, swimming fish, and a treasure chest"></div>
+      <div class="vignette" aria-hidden="true"></div>
+
+      <header class="header">
+        <a class="brand" href="../" aria-label="All dioramas" title="Back to all dioramas">
+          <svg class="brand-mark" viewBox="0 0 40 42" fill="none" aria-hidden="true"><path d="M10 25V15a10 10 0 0 1 20 0v10M5 29c5-4 10-4 15 0s10 4 15 0M5 36c5-4 10-4 15 0s10 4 15 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M16 22v-7a4 4 0 0 1 8 0v7" stroke="currentColor" stroke-width="1.3"/></svg>
+          <span>thalassa<span class="brand-caption">SMALL WORLDS. DEEP WONDER.</span></span>
+        </a>
+        <div class="header-right"><span class="collection-label">A STUDY IN STILLNESS <span>—</span> VOL. 01</span><button id="guide-toggle" class="guide-button" aria-expanded="false" aria-controls="field-guide"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 6c-3-2-6-2-9-1v14c3-1 6-1 9 1 3-2 6-2 9-1V5c-3-1-6-1-9 1Zm0 0v14" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Field guide<span class="button-plus">+</span></button></div>
+      </header>
+
+      <main class="intro">
+        <div class="eyebrow"><span></span> BENEATH THE SURFACE</div>
+        <h1>The sunken<br /><em>garden.</em></h1>
+        <p>Where time rests,<br />and little things come alive.</p>
+        <div class="intro-rule"></div>
+        <div class="specimen-number"><span>36° 24′ N &nbsp; 25° 28′ E</span><span>AN IMAGINED MEDITERRANEAN</span></div>
+      </main>
+
+      <div class="depth-marker" aria-hidden="true"><span>SURFACE</span><div class="depth-line"><i></i></div><span class="depth-number">12<span>m</span></span><span>BELOW</span></div>
+
+      <div id="hotspots" class="hotspots">
+        <button class="hotspot" data-feature="treasure" aria-label="Discover the forgotten treasure"><span class="hotspot-dot">+</span><span class="hotspot-label">A forgotten treasure</span></button>
+        <button class="hotspot" data-feature="ruins" aria-label="Discover the ancient arch"><span class="hotspot-dot">+</span><span class="hotspot-label">Echoes of a city</span></button>
+        <button class="hotspot" data-feature="reef" aria-label="Discover the living reef"><span class="hotspot-dot">+</span><span class="hotspot-label">Life finds a way</span></button>
+      </div>
+
+      <section id="field-guide" class="field-guide" aria-label="Field guide" hidden>
+        <div class="guide-heading"><span>NOTES FROM BELOW</span><button id="guide-close" class="icon-button" aria-label="Close field guide"><svg viewBox="0 0 24 24" fill="none"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.5"/></svg></button></div>
+        <span id="guide-index" class="guide-index">01 / 03</span>
+        <h2 id="guide-title">A forgotten treasure</h2>
+        <p id="guide-copy">Tucked between the rocks, an old wooden chest keeps its quiet watch. Some things are worth looking a little closer for.</p>
+        <button id="guide-action" class="text-button">Open the chest <span>↗</span></button>
+        <div class="guide-pagination"><button data-page="treasure" class="active" aria-label="Read about the treasure" aria-pressed="true">01</button><button data-page="ruins" aria-label="Read about the ruins" aria-pressed="false">02</button><button data-page="reef" aria-label="Read about the reef" aria-pressed="false">03</button><span>A WORLD RECLAIMED BY THE SEA</span></div>
+      </section>
+
+      <div class="scene-controls" aria-label="Scene controls">
+        <button id="motion-toggle" class="icon-button" aria-label="Pause animation" aria-pressed="false" title="Pause animation"><svg id="pause-icon" viewBox="0 0 24 24" fill="none"><path d="M9 6v12M15 6v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg id="play-icon" viewBox="0 0 24 24" fill="none" hidden><path d="m9 6 9 6-9 6V6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></button>
+        <div class="control-divider"></div>
+        <button id="rotate-toggle" class="control-button" aria-pressed="false" title="Slowly orbit the diorama"><svg viewBox="0 0 24 24" fill="none"><path d="M19.5 13.5c0 3-3.4 5.5-7.5 5.5S4.5 16.5 4.5 13.5 7.9 8 12 8c2.3 0 4.3.7 5.7 1.8M17.5 5.5l.5 4.7-4.8.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Orbit</span></button>
+        <button id="reset-view" class="icon-button" aria-label="Reset view" title="Reset view"><svg viewBox="0 0 24 24" fill="none"><path d="M5.5 9A7 7 0 1 1 5 14M5.5 4.5V9H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="control-divider"></div>
+        <button id="details-toggle" class="control-button active" aria-pressed="true" title="Show or hide points of interest"><svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2L12 3Z" stroke="currentColor" stroke-width="1.35" stroke-linejoin="round"/></svg><span>Discover</span></button>
+      </div>
+      <div class="interaction-hint"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v12M2 8h12M6 4l2-2 2 2M6 12l2 2 2-2M4 6 2 8l2 2M12 6l2 2-2 2" stroke="currentColor" stroke-width=".8"/></svg>Drag to wander<span>·</span>Scroll to look closer</div>
+
+      <footer class="footer"><div class="live-status"><span class="status-dot"></span><span id="status-text">A LITTLE WORLD, ALIVE</span></div><span class="footer-note">No hurry. Just a little wonder.</span><span class="edition">HANDCRAFTED IN THREE.JS <span>↗</span></span></footer>
+      <div id="loading" class="loading"><svg viewBox="0 0 40 42" fill="none"><path d="M10 25V15a10 10 0 0 1 20 0v10M5 29c5-4 10-4 15 0s10 4 15 0M5 36c5-4 10-4 15 0s10 4 15 0" stroke="currentColor" stroke-width="1.5"/></svg><span>A little world is coming alive<span class="loading-dots">…</span></span></div>
+      <div id="toast" class="toast" role="status"></div>
+      <noscript><div class="no-webgl">This little world needs JavaScript to come alive.</div></noscript>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

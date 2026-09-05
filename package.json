@@ -1,0 +1,19 @@
+{
+  "name": "stylized-dioramas",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.30.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "vite": "^8.2.2"
+  }
+}
