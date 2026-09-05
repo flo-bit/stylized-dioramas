@@ -1,3 +1,5 @@
+<img width="960" height="720" alt="italy-town" src="https://github.com/user-attachments/assets/f28f3e8e-899d-4231-bdb5-24b3c0b9ed03" />
+
 # stylized dioramas
 
 one shot tests using gpt-6-astra, 6 different stylized dioramas
